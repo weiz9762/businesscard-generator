@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Cinzel+Decorative|Dorsa|Italiana|Julius+Sans+One|Orbitron|Playfair+Display+SC|Six+Caps|Wire+One" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>html() and val() Madlib</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style type="text/css">
+    .fresh-card, .dark-card, .light-card, .normal-card, .baw-card {
+      height:230px;
+      width:400px;
+      display:none;
+    }
+    
+    .fresh-card{
+      background: linear-gradient(lightblue, white);
+    }
+    .dark-card {
+      background: linear-gradient(#434343,#000000);
+    }
+    .light-card{
+      background: linear-gradient(#fdfcfb, #e2d1c3);
+    }
+   .normal-card{
+      background: linear-gradient(#29323c, #485563);
+      
+    }
+    .baw-card {
+      background-color: #353839;
+      border-right: 200px solid #e2d1c3;
+      height:230px;
+      width:200px;
+      display:none;
+    }
+    .fnh1 {
+      font-size:40px;
+      text-align: center;
+      font-family: 'Julius Sans One', sans-serif;
+      z-index:5;
+      padding-top:50px;
+      font-weight: 900;
+    }
+    .lnh1 {
+      font-size:40px;
+      text-align:center;
+      font-family: 'Julius Sans One', sans-serif;
+      font-weight: 100;
+      padding-bottom:10px;
+    }
+    
+    .email {
+      text-align:center;
+      bottom:20px;
+      
+    }
+    
+    .phonenum {
+      text-align:center;
+      bottom:173px;
+    }
+    
+    .website {
+      text-transform: uppercase;
+      font-size: 15px;
+      bottom: 30px;
+      text-align: center;
+    }
+    .address {
+      font-size:20px;
+      font-style: italic;
+      left:200px;
+      bottom:50px;
+      width: 150px;
+      word-wrap: break-word;
+      text-align:center;
+    }
+    .position {
+      font-size:20px;
+      font-style: italic;
+      left:200px;
+      bottom:50px;
+      width: 150px;
+      word-wrap: break-word;
+      text-align:center;
+    }
+    .company {
+      text-align:center;
+      font-size:20px;
+    }
+    
+    
+    
+  </style>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  <script>
+    $(function() {
+      //$('.fresh-card, .dark-card, .light-card, .normal-card').hide();
+        $('button').click(function() {
+        var fname = $('#fname').val();
+        var lname = $('#lname').val();
+        var email = $('#email').val();
+        var website = $('#website').val();
+        var address = $('#address').val();
+        var phonenum = $('#phonenum').val();
+        var company = $('#company').val();
+        var usercolor = $('#usercolor').val();
+        
+    
+        $('.fnh1').html(fname).css('color',usercolor);
+        $('.lnh1').html(lname).css('color',usercolor);
+        $('.email').html(email).css('color',usercolor);
+        $('.website').html(website).css('color',usercolor);
+        $('.position').html(website).css('color',usercolor);
+        $('.address').html(address).css('color',usercolor);
+        $('.phonenum').html(phonenum).css('color',usercolor);
+        $('.company').html(company).css('color',usercolor);
+    
+    
+      $('#style').change(function(){
+        if($(this).val() == 'fresh') {
+          $('.fresh-card').show();
+          $('.dark-card').hide();
+          $('.light-card').hide();
+          $('.normal-card').hide();
+          $('.baw-card').hide();
+        } else if($(this).val() == 'dark') {
+          $('.dark-card').show();
+          $('.fresh-card').hide();
+          $('.light-card').hide();
+          $('.normal-card').hide();
+          $('.baw-card').hide();
+        } else if($(this).val() == 'light') {
+          $('.light-card').show();
+          $('.dark-card').hide();
+          $('.fresh-card').hide();
+          $('.normal-card').hide();
+          $('.baw-card').hide();
+        } else if($(this).val() == 'normal') {
+          $('.normal-card').show();
+          $('.light-card').hide();
+          $('.fresh-card').hide();
+          $('.dark-card').hide();
+          $('.baw-card').hide();
+        } else if($(this).val() == 'baw') {
+          $('.normal-card').hide();
+          $('.light-card').hide();
+          $('.fresh-card').hide();
+          $('.dark-card').hide();
+          $('.baw-card').show();
+          
+        }
+        
+        //$('text').dblclick(
+          //)
+      });
+      
+      //var font = ["Permanent Marker", "Monoton"]
+      
+      //var i = Math.floor(Math.random() * 20);
+      
+      
+      });
+});
+  </script>
+  <script type="text/javascript">
+    $(function() {
+    $(".fnh1, .lnh1, .email, .website, .address, .position, .phonenum, .company").draggable();
+    });
+  
+  </script>
+</head>
+
+<body>
+
+  First Name: <input type=name id="fname" required><br> 
+  Last Name:<input type=name id="lname" required><br> 
+  Email: <input type=email id="email" required><br> 
+  Website: <input type=url id="website"><br>
+  Address: <input id="address"><br> 
+  Position: <input id="position"><br> 
+  Phone Number: <input type=tel id="phonenum" required><br>  
+  Company Name: <input id="company"><br> 
+  Text Color: <input id="usercolor"><br> 
+  Style: 
+  <select id="style">
+    <option value="" selected disabled>Please select an option...</option>
+    <option value="fresh" id="fresh">Fresh</option>
+    <option value="dark" id="dark">Dark</option>
+    <option value="light" id="light">Light</option>
+    <option value="normal" id="normal">Normal</option>
+    <option value="baw" id="baw">Black & White</option>
+  </select>
+  
+  <br>
+  <button>Generate!</button>
+
+  <div class="fresh-card">
+    <h1 class="fnh1"></h1>
+    <h1 class="lnh1"></h2>
+    <p class="email"></p>
+    <p class="website"></p>
+    <p class="address"></p>
+    <p class="position"></p>
+    <p class="phonenum"></p>
+    <p class="company"></p>
+  </div>
+  <div class="dark-card">
+    <h1 class="fnh1"></h1>
+    <h1 class="lnh1"></h2>
+    <p class="email"></p>
+    <p class="website"></p>
+    <p class="address"></p>
+    <p class="position"></p>
+    <p class="phonenum"></p>
+    <p class="company"></p>
+  </div>
+  
+  <div class="light-card">
+    <h1 class="fnh1"></h1>
+    <h1 class="lnh1"></h2>
+    <p class="email"></p>
+    <p class="website"></p>
+    <p class="address"></p>
+    <p class="position"></p>
+    <p class="phonenum"></p>
+    <p class="company"></p>
+  </div>
+  <div class="normal-card">
+    <h1 class="fnh1"></h1>
+    <h1 class="lnh1"></h2>
+    <p class="email"></p>
+    <p class="website"></p>
+    <p class="address"></p>
+    <p class="position"></p>
+    <p class="phonenum"></p>
+    <p class="company"></p>
+  </div>
+  
+  <div class="baw-card">
+    <h1 class="fnh1"></h1>
+    <h1 class="lnh1"></h2>
+    <p class="email"></p>
+    <p class="website"></p>
+    <p class="address"></p>
+    <p class="position"></p>
+    <p class="phonenum"></p>
+    <p class="company"></p>
+  </div>
+
+</body>
+
+</html>
