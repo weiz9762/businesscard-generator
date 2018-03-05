@@ -128,6 +128,7 @@
       clear: right;
 
     }
+    
   </style>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -309,7 +310,14 @@
   </script>
   <script type="text/javascript">
     $(function() {
-      $(".nh1, .email, .website, .address, .position, .phonenum, .company, .fax,").draggable();
+      $(".nh1").draggable();
+      $(".email").draggable();
+      $(".website").draggable();
+      $(".address").draggable();
+      $(".position").draggable();
+      $(".company").draggable();
+      $(".phonenum").draggable();
+      $(".fax").draggable();
     });
   </script>
 </head>
@@ -349,6 +357,7 @@
   <br>
   <button id="b1">Generate Your Business Card!</button> <br>
   <button id="b2">Generate A Random Business Card!</button>
+  <p>Don't Like the Position? Try to Drag them!</p>
 
   <div class="fresh-card">
     <h1 class="nh1"></h1>
